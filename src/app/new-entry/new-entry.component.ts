@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./new-entry.component.css']
 })
 export class NewEntryComponent implements OnInit {
+
     newEntryForm = this.formBuilder.group({
     username: '',
     submissionDate:'',

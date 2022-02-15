@@ -1,3 +1,4 @@
 things to add:
 - submission successful text to pop up after hitting submit button
--set the text box to be a certain size and allow for "show more" if the messages are long.
+- disable submit button if areas are not filled 
+-highlight in the nav which page you are currently on

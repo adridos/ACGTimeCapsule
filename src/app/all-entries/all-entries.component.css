@@ -3,7 +3,7 @@
     display:flex;
 }
 .cardContainer{
-    padding-top:60px;
+    padding-top:10px;
     max-height: 900px;
     gap:20px;
 }
