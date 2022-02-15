@@ -1,0 +1,21 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * Adriana Massey * * -->
+<!-- * * Feb 8 2022 * * -->
+<!-- * * Home Page with Nav* * -->
+
+<html>
+    <h1 class="textBoxh1"> All Entries</h1>
+    <div class = "cardContainer">
+    <div class="singleCard">
+        <app-cards
+            *ngFor="let post of posts"
+            [username]="post.username"
+            [submissionDate]="post.submissionDate"
+            [internSemester]="post.internSemester"
+            [message]="post.message"
+            ></app-cards> 
+    </div>
+</div>
+</html>
+
+

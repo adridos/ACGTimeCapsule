@@ -1,0 +1,17 @@
+.card{
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-right:0;
+}
+.posts{
+    padding:100px;
+}
+.card-box{
+    display:flex;
+    margin: 10px;
+}
+.subtitle.is-6{
+    font-size:12px;
+    margin-bottom:0;
+}
+

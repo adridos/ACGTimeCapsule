@@ -1,0 +1,15 @@
+:host{
+    display:flex;
+}
+
+.cardContainer{
+    padding-top:60px;
+    max-height: 900px;
+    gap:20px;
+}
+.singleCard{
+    margin-right: 20px;
+}
+.card-content{
+    width:100%
+}
