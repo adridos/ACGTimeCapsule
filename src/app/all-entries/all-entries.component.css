@@ -13,3 +13,11 @@
 .card-content{
     width:100%
 }
+.textBoxh1{
+    font-weight:bold;
+    color: #8B9A46;
+    font-size: 27px;
+    text-align: center;
+vertical-align: middle;
+line-height: 90px; 
+}
