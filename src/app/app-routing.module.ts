@@ -6,7 +6,7 @@ import { AboutComponent } from './about/about.component';
 import { NewEntryComponent } from './new-entry/new-entry.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/all-entries', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'new-entry', component: NewEntryComponent }
