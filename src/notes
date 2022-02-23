@@ -1,4 +1,5 @@
 things to add:
 - submission successful text to pop up after hitting submit button
 - disable submit button if areas are not filled 
--highlight in the nav which page you are currently on
+- highlight in the nav which page you are currently on
+- change message text area to input inorder to use ngModel
