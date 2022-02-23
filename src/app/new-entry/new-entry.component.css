@@ -1,3 +1,11 @@
 .error{
     font-weight:bold;
 }
+.form-group{
+    padding: 5px;
+}
+.textBox{
+    opacity:1; 
+    padding: 35px; 
+    height:620px;
+}

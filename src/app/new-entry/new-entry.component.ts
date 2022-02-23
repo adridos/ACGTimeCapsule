@@ -18,18 +18,16 @@ export class NewEntryComponent implements OnInit {
     internSemester:'',
     message:''});
     
-    //onNameChange(event: Event) {
-    //  this.username = (event.target as HTMLInputElement).value;
-    //}
-    // Place this in HTML name input(input)="onNameChange($any($event.target).value)"
 constructor(private formBuilder: FormBuilder,) {  
   
 }
+showSuccessMsg: boolean = false;
+
 onSubmit(userForm): void{
     //process the new entry
     console.log('your submission has been accepted',userForm);
-    this.newEntryForm.reset();
-      
+    userForm.reset();
+    this.showSuccessMsg = true;
 }
 
   ngOnInit(): void {

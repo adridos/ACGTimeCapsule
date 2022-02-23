@@ -5,7 +5,7 @@
 
 <html>
 <div class="groupPhoto">
-    <div class="textBox" style="opacity:1; padding: 35px; height:600px;">
+    <div class="textBox">
         <h1 class="textBoxh1"> New Entry</h1>
         <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
             <div class="newSubmission" class="form-group" style="padding: 30px">
@@ -15,14 +15,7 @@
                         <input required #username="ngModel" name="username" class="form-control" ngModel
                             class="input is-success" id="name" type="text" placeholder="First and Last"
                             style="border-color:#8B9A46" />
-                        <div class="error" *ngIf="username.touched && username.invalid">please enter your first and last name</div>
-
-                        <span class="icon is-small is-left">
-                            <i class="fas fa-user"></i>
-                        </span>
-                        <span class="icon is-small is-right">
-                            <i class="fas fa-check"></i>
-                        </span>
+                        <div class="error" *ngIf="username.touched && username.invalid">please enter your first and last name</div>                
                     </div>
 
 
@@ -32,11 +25,7 @@
                         <input class="input is-success" class="form-control" name="submissionDate" required
                             #submissionDate="ngModel" ngModel id="submissionDate" type="date"
                             style="border-color:#8B9A46" />
-                        <div class="error" *ngIf="submissionDate.touched && submissionDate.invalid">please enter today's date</div>
-
-                        <span class="icon is-small is-right">
-                            <i class="fas fa-check"></i>
-                        </span>
+                        <div class="error" *ngIf="submissionDate.touched && submissionDate.invalid">please enter today's date</div>              
                     </div>
 
 
@@ -46,13 +35,6 @@
                             id="internSemester" type="text" placeholder="Winter 2022" style="border-color:#8B9A46" />
                         <div class="error" *ngIf="internSemester.touched && internSemester.invalid">please enter the semester of your
                             internship</div>
-
-                        <span class="icon is-small is-left">
-                            <i class="fas fa-envelope"></i>
-                        </span>
-                        <span class="icon is-small is-right">
-                            <i class="fas fa-exclamation-triangle"></i>
-                        </span>
                     </div>
 
 
@@ -73,11 +55,15 @@
                         <div class="control">
                             <button [disabled]="!userForm.form.valid" id="submitBtn" class="button is-link" type="submit"
                                 style="background-color: #8B9A46;color:white">Submit</button>
+                                
                         </div>
 
                         <div class="control">
                             <button class="button is-link is-light" type="reset" id="cancelBtn"
                                 style="background-color:#E8E8A6;color:#8B9A46">Cancel</button>
+                        </div>
+                        <div *ngIf="showSuccessMsg">
+                            <p>Success!</p>
                         </div>
                     </div>
                 </div>
