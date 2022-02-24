@@ -59,8 +59,8 @@
                         </div>
 
                         <div class="control">
-                            <button class="button is-link is-light" type="reset" id="cancelBtn"
-                                style="background-color:#E8E8A6;color:#8B9A46">Cancel</button>
+                            <button class="button is-link is-light" (click)="clearSuccessMsg($event)" type="reset" id="cancelBtn"
+                                style="background-color:#E8E8A6;color:#8B9A46">Clear</button>
                         </div>
                         <div *ngIf="showSuccessMsg">
                             <p>Success!</p>
@@ -69,10 +69,10 @@
                 </div>
             </div>
             <div >
-                {{username.value}}
-                {{submissionDate.value}}
-                {{internSemester.value}}
-                {{message.value}}
+               <p>{{username.value | titlecase }}</p> 
+               <p> {{submissionDate.value}}</p>
+               <p>{{internSemester.value | titlecase}}</p> 
+               <p> {{message.value}}</p>
 
             </div>
             

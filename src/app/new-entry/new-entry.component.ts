@@ -23,11 +23,16 @@ constructor(private formBuilder: FormBuilder,) {
 }
 showSuccessMsg: boolean = false;
 
+
 onSubmit(userForm): void{
     //process the new entry
     console.log('your submission has been accepted',userForm);
     userForm.reset();
     this.showSuccessMsg = true;
+    //setTimeout(()=> {this.showSuccessMsg},4);
+}
+clearSuccessMsg($event: Event){
+this.showSuccessMsg=false;
 }
 
   ngOnInit(): void {
