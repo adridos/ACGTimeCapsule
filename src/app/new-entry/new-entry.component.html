@@ -70,9 +70,9 @@
             </div>
             <div >
                <p>{{username.value | titlecase }}</p> 
-               <p> {{submissionDate.value}}</p>
+               <p>{{submissionDate.value | date:"longDate" }}</p>
                <p>{{internSemester.value | titlecase}}</p> 
-               <p> {{message.value}}</p>
+               <p>{{message.value}}</p>
 
             </div>
             

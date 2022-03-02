@@ -3,9 +3,9 @@
     <div class="media-content">
     <div class="content" style="color:#8B9A46; font-size:20px; font-weight:bold">
       "{{ message }}"
-      <p class="subtitle is-6">{{ username }}</p>
-      <p class="subtitle is-6">{{ submissionDate }}</p>
-      <p class="subtitle is-6">{{ internSemester }}</p>
+      <p class="subtitle is-6">{{ username | titlecase }}</p>
+      <p class="subtitle is-6">{{ submissionDate | date:"longDate"}}</p>
+      <p class="subtitle is-6">{{ internSemester | titlecase }}</p>
     </div>
     </div>
   </div>
