@@ -13,6 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AllEntriesComponent } from './all-entries/all-entries.component';
 import { CardsComponent } from './cards/cards.component';
+import { ItemOutputComponent } from './item-output/item-output.component';
 
 const Routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -29,7 +30,8 @@ const Routes: Routes = [
     FooterComponent,
     HeaderComponent,
     AllEntriesComponent,
-    CardsComponent
+    CardsComponent,
+    ItemOutputComponent
   ],
   imports: [
     BrowserModule,

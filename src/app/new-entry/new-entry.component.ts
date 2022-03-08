@@ -1,6 +1,6 @@
-import { Component, OnInit, Output, Input } from '@angular/core';
-import { FormBuilder, FormGroup, SelectControlValueAccessor } from '@angular/forms';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+//CHILD 
 
 @Component({
   selector: 'app-new-entry',
@@ -9,27 +9,31 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class NewEntryComponent implements OnInit {
 
-  newEntryForm = this.formBuilder.group({
-    name: '',
-    submissionDate: '',
-    internSemester: '',
-    message: ''
-  });
+  @Output() newItemEvent = new EventEmitter<string>();
 
-  constructor(private formBuilder: FormBuilder,) {
+  addNewItem(value: string){
+    this.newItemEvent.emit(value);
   }
 
   showSuccessMsg: boolean = false;
-  onSubmit(userForm): void {
-    console.log('your submission has been accepted', userForm);
+
+   userForm = this.formBuilder.group({
+      username: '',
+      submissionDate: '',
+      internSemester: '',
+      message:'',
+  });
+
+  onSubmit(userForm: { value: any; reset: () => void; }) {
     userForm.reset();
     this.showSuccessMsg = true;
-  }
+    
 
+  }
   clearSuccessMsg($event: Event) {
     this.showSuccessMsg = false;
   }
 
-  ngOnInit(): void {
-  }
+  constructor(private formBuilder: FormBuilder,) {}
+  ngOnInit(): void {}
 }

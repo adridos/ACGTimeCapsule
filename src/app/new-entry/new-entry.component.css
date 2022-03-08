@@ -19,3 +19,17 @@
     top: 20px;
     left:340px;
 }
+.input{
+    border-color:#8B9A46;
+}
+.textarea{
+    border-color:#8B9A46;
+}
+#cancelBtn{
+    background-color:#E8E8A6;
+    color:#8B9A46;
+}
+#submitBtn{
+    background-color: #8B9A46;
+    color:white;
+}

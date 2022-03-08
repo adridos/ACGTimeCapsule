@@ -4,63 +4,60 @@
 <!-- * * Home Page with Nav* * -->
 
 <html>
-<div class="groupPhoto">
     <div class="textBox">
         <h1 class="textBoxh1"> New Entry</h1>
         <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+
             <div class="newSubmission" class="form-group" style="padding: 30px">
                 <div class="field">
-                    <div class="control has-icons-left has-icons-right" class="form-group">
+                    <div class="form-group">
                         <label for="username" class="label">Name</label>
                         <input required #username="ngModel" name="username" class="form-control" ngModel
-                            class="input is-success" id="name" type="text" placeholder="First and Last"
-                            style="border-color:#8B9A46" />
-                        <div class="error" *ngIf="username.touched && username.invalid">please enter your first and last name</div>                
+                            class="input is-success" type="text" placeholder="First and Last" />
+                        <div class="error" *ngIf="username.touched && username.invalid">please enter your first and last
+                            name</div>
                     </div>
 
 
-                    <div class="control has-icons-left has-icons-right" class="form-group">
+                    <div class="form-group">
                         <label for="submissionDate" class="label">Date</label>
 
                         <input class="input is-success" class="form-control" name="submissionDate" required
-                            #submissionDate="ngModel" ngModel id="submissionDate" type="date"
-                            style="border-color:#8B9A46" />
-                        <div class="error" *ngIf="submissionDate.touched && submissionDate.invalid">please enter today's date</div>              
+                            #submissionDate="ngModel" ngModel type="date" />
+                        <div class="error" *ngIf="submissionDate.touched && submissionDate.invalid">please enter today's
+                            date</div>
                     </div>
 
 
                     <div class="control has-icons-left has-icons-right" class="form-group">
                         <label for="internSemester" class="label">Internship Semester</label>
                         <input class="input is-success" ngModel name="internSemester" required #internSemester="ngModel"
-                            id="internSemester" type="text" placeholder="Winter 2022" style="border-color:#8B9A46" />
-                        <div class="error" *ngIf="internSemester.touched && internSemester.invalid">please enter the semester of your
-                            internship</div>
+                            type="text" placeholder="Winter 2022" />
+                        <div class="error" *ngIf="internSemester.touched && internSemester.invalid">please enter
+                            thesemester of your internship</div>
                     </div>
-
 
                     <div class="field" class="form-group">
                         <label for="message" class="label">Message</label>
 
                         <div class="control">
-                            <textarea name="message" ngModel required #message="ngModel" class="textarea" id="content"
-                                placeholder="What do you want to share with future AAA interns..."
-                                style="border-color:#8B9A46"></textarea>
-                            <div class="error" *ngIf="message.touched && message.invalid">please enter your message before submitting
+                            <textarea name="message" ngModel required #message="ngModel" class="textarea"
+                                placeholder="What do you want to share with future AAA interns..."></textarea>
+                            <div class="error" *ngIf="message.touched && message.invalid">please enter your message
+                                before submitting
                             </div>
                         </div>
-
                     </div>
 
                     <div class="field is-grouped" style="padding-top: 10px;">
                         <div class="control">
-                            <button [disabled]="!userForm.form.valid" id="submitBtn" class="button is-link" type="submit"
-                                style="background-color: #8B9A46;color:white">Submit</button>
-                                
+                            <button [disabled]="!userForm.form.valid" id="submitBtn" class="button is-link"
+                                type="submit" (click)="addNewItem(userForm.value)">Submit</button>
                         </div>
 
                         <div class="control">
-                            <button class="button is-link is-light" (click)="clearSuccessMsg($event)" type="reset" id="cancelBtn"
-                                style="background-color:#E8E8A6;color:#8B9A46">Clear</button>
+                            <button class="button is-link is-light" (click)="clearSuccessMsg($event)" type="reset"
+                                id="cancelBtn">Clear</button>
                         </div>
                         <div *ngIf="showSuccessMsg">
                             <p>Success!</p>
@@ -68,13 +65,4 @@
                     </div>
                 </div>
             </div>
-            <div >
-               <p>{{username.value | titlecase }}</p> 
-               <p>{{submissionDate.value | date:"longDate" }}</p>
-               <p>{{internSemester.value | titlecase}}</p> 
-               <p>{{message.value}}</p>
-
-            </div>
-            
-
         </form>

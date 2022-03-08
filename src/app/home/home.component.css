@@ -3,13 +3,64 @@
     display:flex;
 }
 .cardContainer{
-    padding-top:60px;
+    padding-top:10px;
     max-height: 900px;
     gap:20px;
 }
 .singleCard{
     margin-right: 20px;
 }
+.error{
+    font-weight:bold;
+}
+.form-group{
+    padding: 5px;
+}
+.textBox{
+    opacity:1; 
+    padding: 35px; 
+    height:620px;
+    background-color: white;
+    width: 800px;
+    margin-left: 100px;
+    margin-right: 300px; 
+}
+.textBoxh1{
+    font-size: 40px;
+    position: absolute;
+    top: 20px;
+    left:340px;
+}
+.input{
+    border-color:#8B9A46;
+}
+.textarea{
+    border-color:#8B9A46;
+}
+#cancelBtn{
+    background-color:#E8E8A6;
+    color:#8B9A46;
+}
+#submitBtn{
+    background-color: #8B9A46;
+    color:white;
+}
+.cardContainer{
+    opacity:1; 
+    background-color: white;
+    margin-left: 20px;
+    margin-right: 20px; 
+    margin-top:40px;
+    display:flex;
+}
 .card-content{
     width:100%
+}
+.subtitle.is-6{
+margin-bottom: 2px;
+padding-top: 5px;
+
+}
+#username, #semester{
+    text-transform: capitalize;
 }

@@ -4,17 +4,17 @@
 <!-- * * Home Page with Nav* * -->
 
 <html>
-    <div class = "cardContainer">
+<div class="cardContainer">
     <div class="singleCard">
-       <app-cards
-         *ngFor="let post of posts"
-            [username]="post.username"
+        <app-cards 
+            *ngFor="let post of posts" 
+            [username]="post.username" 
             [submissionDate]="post.submissionDate"
-            [internSemester]="post.internSemester"
+            [internSemester]="post.internSemester" 
             [message]="post.message"
-            ></app-cards> 
-      
+        ></app-cards>
+     
     </div>
 </div>
-</html>
 
+</html>
