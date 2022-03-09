@@ -13,7 +13,7 @@
 
             <div class="form-group">
                 <label for="username" class="label">Name</label>
-                <input [(ngModel)]="nameModel" required #username="ngModel" id="username" name="username"
+                <input [(ngModel)]="nameModel" required #username="ngModel" name="username"
                     class="form-control" ngModel class="input is-success" type="text" placeholder="First and Last" />
                 <div class="error" *ngIf="username.touched && username.invalid">please enter your first and last name
                 </div>
@@ -21,7 +21,7 @@
 
             <div class="form-group">
                 <label for="submissionDate" class="label">Date</label>
-                <input class="input is-success" class="form-control" name="submissionDate" required
+                <input [(ngModel)]="dateModel" class="input is-success" class="form-control" name="submissionDate" required
                     #submissionDate="ngModel" ngModel type="date" />
                 <div class="error" *ngIf="submissionDate.touched && submissionDate.invalid">please enter today's
                     date</div>
@@ -30,7 +30,7 @@
 
             <div class="control has-icons-left has-icons-right" class="form-group">
                 <label for="internSemester" class="label">Internship Semester</label>
-                <input class="input is-success" ngModel name="internSemester" required #internSemester="ngModel"
+                <input [(ngModel)]="semesterModel" class="input is-success" ngModel name="internSemester" required #internSemester="ngModel"
                     type="text" placeholder="Winter 2022" />
                 <div class="error" *ngIf="internSemester.touched && internSemester.invalid">please enter the semester of
                     your internship</div>
@@ -40,7 +40,7 @@
                 <label for="message" class="label">Message</label>
 
                 <div class="control">
-                    <textarea name="message" ngModel required #message="ngModel" class="textarea"
+                    <textarea [(ngModel)]="messageModel" name="message" ngModel required #message="ngModel" class="textarea"
                         placeholder="What do you want to share with future AAA interns..."></textarea>
                     <div class="error" *ngIf="message.touched && message.invalid">please enter your message
                         before submitting
@@ -76,7 +76,7 @@
                     <div class="content" style="color:#8B9A46; font-size:20px; font-weight:bold">
                         <div class="content" style="color:#8B9A46; font-size:25px; font-weight:bold">
                             "{{ message.value }}"
-                            <p class="subtitle is-6" id="username">{{ listOfNames }}</p>
+                            <p class="subtitle is-6" id="username">{{ listOfValues }}</p>
                             <p class="subtitle is-6" id="semester">{{ internSemester.value | titlecase }}</p>
                             <p class="subtitle is-6" id="date">{{ submissionDate.value | date:"longDate"}}</p>
                         </div>
