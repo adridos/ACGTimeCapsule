@@ -1,4 +1,4 @@
 Time Capsule Edits:
 API WORK
 
-//Should i get rid of the cards component and just go straight from new entry to all entries
+show 10 cards with div expanding as cards are added, add pagination to show the next 10 in place of old 10

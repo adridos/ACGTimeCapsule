@@ -1,20 +1,14 @@
-import { Component, Input, AfterViewInit } from '@angular/core';
-import { NewEntryComponent } from '../new-entry/new-entry.component';
-//PARENT 
+import { Component, Input } from '@angular/core';
+
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css']
 })
-export class CardsComponent implements AfterViewInit {
-  ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
-  }
-  
+export class CardsComponent {
   @Input() username = '';
   @Input() submissionDate = '';
   @Input() internSemester = '';
   @Input() message = '';
-
 
 }

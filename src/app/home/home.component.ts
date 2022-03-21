@@ -1,37 +1,57 @@
 import { Component, OnInit} from '@angular/core';
 import { FormBuilder} from '@angular/forms';
+import { CardsComponent } from '../cards/cards.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent  implements OnInit  {
+export class HomeComponent extends CardsComponent implements OnInit  {
   userForm = this.formBuilder.group({
     username: '',
     submissionDate: '',
     internSemester: '',
     message:'',
 });
-
+  showNewEntryForm:boolean = true;
+  showReEntryForm:boolean = false;
   showSuccessMsg: boolean = false;
-  showEntry: boolean = false;
+  //showEntry: boolean = false;
 
-  nameModel:string="";
-  dateModel: string="";
-  semesterModel:string="";
-  messageModel:string="";
+  nameModel: any ="";
+  dateModel: any ="";
+  semesterModel: any ="";
+  messageModel: any ="";
 
-  listOfValues=[
-    {username: '', submissionDate:'', internSemester:'', message:''}
-  ];
+  posts = [];
  
   onSubmit() {
     this.showSuccessMsg = true;
-    this.showEntry = true;
-    this.listOfValues.push(this.nameModel, this.dateModel, this.semesterModel, this.messageModel);
-    console.log(this.listOfValues);
+   // this.showEntry = true;
+    this.posts.push({username:this.nameModel,submissionDate:this.dateModel,internSemester:this.semesterModel, message:this.messageModel});
     this.nameModel='';
+    this.dateModel='';
+    this.semesterModel='';
+    this.messageModel= '';
+
+    this.showReEntry();
+
+  }
+
+  showReEntry(){
+    this.showReEntryForm=true;
+    this.showNewEntryForm=false;
+  }
+
+  showNewEntry(){
+    this.showReEntryForm=false;
+    this.showNewEntryForm=true;
+    this.showSuccessMsg=false;
+  }
+  hideAllForms(){
+    this.showNewEntryForm=false;
+    this.showReEntryForm=false;
   }
 
   clearSuccessMsg() {
@@ -39,6 +59,8 @@ export class HomeComponent  implements OnInit  {
     this.userForm.reset();
   }
 
-  constructor(private formBuilder: FormBuilder,) {}
+  constructor(private formBuilder: FormBuilder,) {
+    super();
+  }
   ngOnInit() {}
 }

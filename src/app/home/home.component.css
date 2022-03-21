@@ -1,6 +1,6 @@
 
-:host{
-    display:flex;
+html{
+    height:auto;
 }
 .cardContainer{
     padding-top:10px;
@@ -24,6 +24,7 @@
     width: 800px;
     margin-left: 100px;
     margin-right: 300px; 
+    margin-bottom:30px;
 }
 .textBoxh1{
     font-size: 40px;
@@ -63,4 +64,51 @@ padding-top: 5px;
 }
 #username, #semester{
     text-transform: capitalize;
+}
+.scrollingCards{
+    position:relative;
+    overflow:auto;
+    height: 600px;
+}
+.error{
+    font-size: 12px;
+    color:brown;
+}
+.footer, .push{
+    height:4em;
+}
+.ReEntrytextBox{
+    opacity:1; 
+    padding: 35px; 
+    height:200px;
+    background-color: white;
+    width: 400px;
+    margin-left: 300px;
+    margin-right: 300px; 
+    margin-bottom:30px;
+    margin-top:30px;
+    vertical-align: middle;
+
+}
+.nextEntryHeader{
+    padding-left: 70px;
+    padding-top: 0px;
+    padding-bottom: 40px;
+}
+.noButton{
+    background-color:#E8E8A6;
+    color:#8B9A46;
+    margin-left: 40%;
+}
+.yesButton{
+    background-color: #8B9A46;
+    color:white;
+    margin-left: 40%;
+}
+.field.is-grouped{
+    padding-left: 100px;
+    vertical-align: middle;
+}
+#buttonsOnNewEntry.field.is-grouped{
+    padding-left: 5px;
 }

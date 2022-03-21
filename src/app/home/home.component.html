@@ -1,28 +1,28 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * Adriana Massey * * -->
-<!-- * * Feb 8 2022 * * -->
-<!-- * * Home Page with Nav* * -->
+<!-- * * March 11 2022 * * -->
+<!-- * * Home Page with Nav * * -->
 
 <html>
 <!-- * * New Entry Form * * -->
 
-<div class="textBox">
+<div *ngIf="showNewEntryForm" class="textBox">
     <h1 class="textBoxh1"> New Entry</h1>
     <form #userForm="ngForm" (ngSubmit)="onSubmit()">
         <div class="newSubmission" class="form-group" style="padding: 30px">
 
             <div class="form-group">
                 <label for="username" class="label">Name</label>
-                <input [(ngModel)]="nameModel" required #username="ngModel" name="username"
-                    class="form-control" ngModel class="input is-success" type="text" placeholder="First and Last" />
+                <input [(ngModel)]="nameModel" required #username="ngModel" name="username" class="form-control" ngModel
+                    class="input is-success" type="text" placeholder="First and Last" />
                 <div class="error" *ngIf="username.touched && username.invalid">please enter your first and last name
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="submissionDate" class="label">Date</label>
-                <input [(ngModel)]="dateModel" class="input is-success" class="form-control" name="submissionDate" required
-                    #submissionDate="ngModel" ngModel type="date" />
+                <input [(ngModel)]="dateModel" class="input is-success" class="form-control" name="submissionDate"
+                    required #submissionDate="ngModel" ngModel type="date" />
                 <div class="error" *ngIf="submissionDate.touched && submissionDate.invalid">please enter today's
                     date</div>
             </div>
@@ -30,8 +30,8 @@
 
             <div class="control has-icons-left has-icons-right" class="form-group">
                 <label for="internSemester" class="label">Internship Semester</label>
-                <input [(ngModel)]="semesterModel" class="input is-success" ngModel name="internSemester" required #internSemester="ngModel"
-                    type="text" placeholder="Winter 2022" />
+                <input [(ngModel)]="semesterModel" class="input is-success" ngModel name="internSemester" required
+                    #internSemester="ngModel" type="text" placeholder="Winter 2022" />
                 <div class="error" *ngIf="internSemester.touched && internSemester.invalid">please enter the semester of
                     your internship</div>
             </div>
@@ -40,18 +40,17 @@
                 <label for="message" class="label">Message</label>
 
                 <div class="control">
-                    <textarea [(ngModel)]="messageModel" name="message" ngModel required #message="ngModel" class="textarea"
-                        placeholder="What do you want to share with future AAA interns..."></textarea>
-                    <div class="error" *ngIf="message.touched && message.invalid">please enter your message
-                        before submitting
-                    </div>
+                    <textarea [(ngModel)]="messageModel" name="message" ngModel required #message="ngModel"
+                        class="textarea" placeholder="What do you want to share with future AAA interns..."></textarea>
+                    <div class="error" *ngIf="message.touched && message.invalid">please enter your message before
+                        submitting</div>
                 </div>
             </div>
 
-            <div class="field is-grouped" style="padding-top: 10px;">
+            <div class="field is-grouped" id="buttonsOnNewEntry"style="padding-top: 10px;">
                 <div class="control">
                     <button [disabled]="!userForm.form.valid" id="submitBtn" class="button is-link"
-                        type="submit">Submit</button>
+                       (click)="showReEntry" type="submit">Submit</button>
                 </div>
 
                 <div class="control">
@@ -66,22 +65,27 @@
     </form>
 </div>
 
-<!-- * * Display All Entries * * -->
- <div *ngIf=showEntry>
-<!--  <div *ngFor=""-->
-    <div class="cardContainer">
-        <div class="singleCard">
-            <div class="card-content">
-                <div class="media-content">
-                    <div class="content" style="color:#8B9A46; font-size:20px; font-weight:bold">
-                        <div class="content" style="color:#8B9A46; font-size:25px; font-weight:bold">
-                            "{{ message.value }}"
-                            <p class="subtitle is-6" id="username">{{ listOfValues }}</p>
-                            <p class="subtitle is-6" id="semester">{{ internSemester.value | titlecase }}</p>
-                            <p class="subtitle is-6" id="date">{{ submissionDate.value | date:"longDate"}}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- * * Display Re-enter form * * -->
+
+<div *ngIf="showReEntryForm" class="ReEntrytextBox">
+    <h1 class="nextEntryHeader">Submit Another Entry?</h1>
+    <div class="field is-grouped" style="padding-top: 10px;">
+        <div class="control" style="align-self: center;">
+            <button class= "yesButton" class="button is-link" style="background-color: #8B9A46;
+            color:white;" showSuccessMessage="false" (click)="showNewEntry()">Yes</button>
         </div>
+
+        <div class="control">
+            <button class= "noButton" class="button is-link is-light" class="button is-link" style="background-color:#E8E8A6;color:#8B9A46;"(click)="hideAllForms()">No</button>
+        </div>
+
     </div>
+</div>
+
+
+<!-- * * Display All Entries * * -->
+
+<div class="scrollingCards">
+    <app-cards *ngFor="let post of posts.reverse()" [message]="post.message" [username]="post.username"
+        [internSemester]="post.internSemester" [submissionDate]="post.submissionDate"></app-cards>
+    <div class="push"></div>
