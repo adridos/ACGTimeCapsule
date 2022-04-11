@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -39,6 +40,7 @@ const Routes: Routes = [
     RouterModule.forRoot(Routes),
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule
 ],
     
