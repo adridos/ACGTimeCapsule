@@ -1,66 +1,70 @@
-import { Component, OnInit} from '@angular/core';
-import { FormBuilder} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { CardsComponent } from '../cards/cards.component';
+import { ConfigPosts, HomeService } from '../home.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent extends CardsComponent implements OnInit  {
+export class HomeComponent extends CardsComponent implements OnInit {
+  public posts = [];
+  public obj = {};
+  configPosts : ConfigPosts| undefined;
+
   userForm = this.formBuilder.group({
-    username: '',
-    submissionDate: '',
-    internSemester: '',
-    message:'',
-});
-  showNewEntryForm:boolean = true;
-  showReEntryForm:boolean = false;
+    name: '',
+    date: '',
+    semester: '',
+    body: '',
+  });
+  showNewEntryForm: boolean = true;
+  showReEntryForm: boolean = false;
   showSuccessMsg: boolean = false;
-  //showEntry: boolean = false;
 
-  nameModel: any ="";
-  dateModel: any ="";
-  semesterModel: any ="";
-  messageModel: any ="";
+  nameModel: any = "";
+  dateModel: any = "";
+  semesterModel: any = "";
+  messageModel: any = "";
+  data: string;
 
-  posts = [];
- 
   onSubmit() {
     this.showSuccessMsg = true;
-   // this.showEntry = true;
-    this.posts.push({username:this.nameModel,submissionDate:this.dateModel,internSemester:this.semesterModel, message:this.messageModel});
-    this.nameModel='';
-    this.dateModel='';
-    this.semesterModel='';
-    this.messageModel= '';
-
+    this.posts.push({ name: this.nameModel, date: this.dateModel, semester: this.semesterModel, body: this.messageModel });
+    this.nameModel = '';
+    this.dateModel = '';
+    this.semesterModel = '';
+    this.messageModel = '';
     this.showReEntry();
-
   }
-
-  showReEntry(){
-    this.showReEntryForm=true;
-    this.showNewEntryForm=false;
+  showReEntry() {
+    this.showReEntryForm = true;
+    this.showNewEntryForm = false;
+    this._homeService.addPost(this.nameModel, this.dateModel, this.semesterModel,this.messageModel);
   }
-
-  showNewEntry(){
-    this.showReEntryForm=false;
-    this.showNewEntryForm=true;
-    this.showSuccessMsg=false;
+  showNewEntry() {
+    this.showReEntryForm = false;
+    this.showNewEntryForm = true;
+    this.showSuccessMsg = false;
   }
-  hideAllForms(){
-    this.showNewEntryForm=false;
-    this.showReEntryForm=false;
+  hideAllForms() {
+    this.showNewEntryForm = false;
+    this.showReEntryForm = false;
   }
-
   clearSuccessMsg() {
     this.showSuccessMsg = false;
     this.userForm.reset();
   }
-
-  constructor(private formBuilder: FormBuilder,) {
+  constructor(private formBuilder: FormBuilder, private _homeService: HomeService) {
     super();
   }
-  ngOnInit() {}
+
+  ngOnInit() {
+    //this._homeService.getPosts().subscribe(data => this.obj = (data['body']));
+   // this.posts.push(JSON.stringify(this.obj));
+   this._homeService.getPosts().subscribe((data: any)=>{
+    this.posts = JSON.parse(data.body)})
+    console.log(this.posts);
+}
 }

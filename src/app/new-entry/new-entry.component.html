@@ -11,39 +11,39 @@
             <div class="newSubmission" class="form-group" style="padding: 30px">
                 <div class="field">
                     <div class="form-group">
-                        <label for="username" class="label">Name</label>
-                        <input required #username="ngModel" name="username" class="form-control" ngModel
+                        <label for="date" class="label">Name</label>
+                        <input required #name="ngModel" name="name" class="form-control" ngModel
                             class="input is-success" type="text" placeholder="First and Last" />
-                        <div class="error" *ngIf="username.touched && username.invalid">please enter your first and last
+                        <div class="error" *ngIf="name.touched && name.invalid">please enter your first and last
                             name</div>
                     </div>
 
 
                     <div class="form-group">
-                        <label for="submissionDate" class="label">Date</label>
+                        <label for="date" class="label">Date</label>
 
-                        <input class="input is-success" class="form-control" name="submissionDate" required
-                            #submissionDate="ngModel" ngModel type="date" />
-                        <div class="error" *ngIf="submissionDate.touched && submissionDate.invalid">please enter today's
+                        <input class="input is-success" class="form-control" name="date" required
+                            #date="ngModel" ngModel type="date" />
+                        <div class="error" *ngIf="date.touched && date.invalid">please enter today's
                             date</div>
                     </div>
 
 
                     <div class="control has-icons-left has-icons-right" class="form-group">
-                        <label for="internSemester" class="label">Internship Semester</label>
-                        <input class="input is-success" ngModel name="internSemester" required #internSemester="ngModel"
+                        <label for="semester" class="label">Internship Semester</label>
+                        <input class="input is-success" ngModel name="semester" required #semester="ngModel"
                             type="text" placeholder="Winter 2022" />
-                        <div class="error" *ngIf="internSemester.touched && internSemester.invalid">please enter
+                        <div class="error" *ngIf="semester.touched && semester.invalid">please enter
                             thesemester of your internship</div>
                     </div>
 
                     <div class="field" class="form-group">
-                        <label for="message" class="label">Message</label>
+                        <label for="body" class="label">Message</label>
 
                         <div class="control">
-                            <textarea name="message" ngModel required #message="ngModel" class="textarea"
+                            <textarea name="body" ngModel required #body="ngModel" class="textarea"
                                 placeholder="What do you want to share with future AAA interns..."></textarea>
-                            <div class="error" *ngIf="message.touched && message.invalid">please enter your message
+                            <div class="error" *ngIf="body.touched && body.invalid">please enter your message
                                 before submitting
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                     <div class="field is-grouped" style="padding-top: 10px;">
                         <div class="control">
                             <button [disabled]="!userForm.form.valid" id="submitBtn" class="button is-link"
-                                type="submit" (click)="addNewItem(userForm.value)">Submit</button>
+                                type="submit" (click)="add(userForm.value.name,userForm.value.date, userForm.value.semester, userForm.value.body)" (click)="addNewItem(userForm.value)">Submit</button>
                         </div>
 
                         <div class="control">

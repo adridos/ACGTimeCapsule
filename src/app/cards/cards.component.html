@@ -3,10 +3,10 @@
     <div class="media-content">
       <div class="content" style="color:#8B9A46; font-size:20px; font-weight:bold">
         <div class="content" style="color:#8B9A46; font-size:20px; font-weight:bold">
-          "{{ message }}"
-          <p class="subtitle is-6">{{ username | titlecase }}</p>
-          <p class="subtitle is-6">{{ internSemester | titlecase }}</p>
-          <p class="subtitle is-6">{{ submissionDate | date:"longDate"}}</p>
+          "{{ body }}"
+          <p class="subtitle is-6">{{ name | titlecase }}</p>
+          <p class="subtitle is-6">{{ semester | titlecase }}</p>
+          <p class="subtitle is-6">{{ date | date:"longDate"}}</p>
         </div>
       </div>
     </div>

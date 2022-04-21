@@ -6,9 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent {
-  @Input() username = '';
-  @Input() submissionDate = '';
-  @Input() internSemester = '';
-  @Input() message = '';
+  @Input() name = '';
+  @Input() date = '';
+  @Input() semester = '';
+  @Input() body = '';
 
 }

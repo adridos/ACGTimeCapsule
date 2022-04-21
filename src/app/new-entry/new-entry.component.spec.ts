@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { NewEntryComponent } from './new-entry.component';
 
 describe('NewEntryComponent', () => {
