@@ -2,9 +2,10 @@
     padding:10px;
     background-color: white;
     opacity:0.85;
+    height: 600px;
 }
 .welcomeParagraph{
-    font-size: 20px;
+    font-size: 22px;
     color: #8B9A46;
     font-weight:500;
     padding:10px 10px 10px 10px;
@@ -17,4 +18,5 @@
 }
 .container{
     width:60%;
+    padding-top: 10px;
 }

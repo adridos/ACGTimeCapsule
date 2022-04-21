@@ -10,5 +10,4 @@ export class CardsComponent {
   @Input() date = '';
   @Input() semester = '';
   @Input() body = '';
-
 }

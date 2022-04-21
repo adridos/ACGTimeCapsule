@@ -1,114 +1,129 @@
-
-html{
-    height:auto;
-}
-.cardContainer{
-    padding-top:10px;
+.cardContainer {
+    padding-top: 10px;
     max-height: 900px;
-    gap:20px;
+    gap: 20px;
 }
-.singleCard{
+.singleCard {
     margin-right: 20px;
 }
-.error{
-    font-weight:bold;
-}
-.form-group{
+.form-group {
     padding: 5px;
 }
-.textBox{
-    opacity:1; 
-    padding: 35px; 
-    height:620px;
+
+.textBox {
+    opacity: 1;
+    margin:auto;
+    margin-top:10px;
     background-color: white;
-    width: 800px;
-    margin-left: 100px;
-    margin-right: 300px; 
-    margin-bottom:30px;
+    width: 50%;
+    margin-bottom: 15px;
 }
-.textBoxh1{
+
+.textBoxh1 {
     font-size: 40px;
-    position: absolute;
-    top: 20px;
-    left:340px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 0px;
 }
-.input{
-    border-color:#8B9A46;
+
+.input {
+    border-color: #8B9A46;
 }
-.textarea{
-    border-color:#8B9A46;
+
+.textarea {
+    border-color: #8B9A46;
 }
-#cancelBtn{
-    background-color:#E8E8A6;
-    color:#8B9A46;
+
+#cancelBtn {
+    background-color: #E8E8A6;
+    color: #8B9A46;
 }
-#submitBtn{
+
+#submitBtn {
     background-color: #8B9A46;
-    color:white;
+    color: white;
 }
-.cardContainer{
-    opacity:1; 
+
+.cardContainer {
+    opacity: 1;
     background-color: white;
     margin-left: 20px;
-    margin-right: 20px; 
-    margin-top:40px;
-    display:flex;
+    margin-right: 20px;
+    margin-top: 40px;
+    display: flex;
 }
-.card-content{
-    width:100%
+
+.card-content {
+    width: 100%
 }
-.subtitle.is-6{
-margin-bottom: 2px;
-padding-top: 5px;
+
+.subtitle.is-6 {
+    margin-bottom: 2px;
+    padding-top: 5px;
 
 }
-#name, #semester{
+
+#name,
+#semester {
     text-transform: capitalize;
 }
-.scrollingCards{
-    position:relative;
-    overflow:auto;
+
+.scrollingCards {
+    position: relative;
+    overflow: auto;
     height: 600px;
 }
-.error{
+
+.error {
     font-size: 12px;
-    color:brown;
+    color: brown;
+    font-weight:bold;
 }
-.footer, .push{
-    height:4em;
+
+.push {
+    height: 4em;
 }
-.ReEntrytextBox{
-    opacity:1; 
-    padding: 35px; 
-    height:200px;
+
+.ReEntrytextBox {
+    opacity: 1;
+    padding: 35px;
+    height: 200px;
     background-color: white;
     width: 400px;
     margin-left: 300px;
-    margin-right: 300px; 
-    margin-bottom:30px;
-    margin-top:30px;
+    margin-right: 300px;
+    margin-bottom: 30px;
+    margin-top: 30px;
     vertical-align: middle;
 
 }
-.nextEntryHeader{
+
+.nextEntryHeader {
     padding-left: 70px;
     padding-top: 0px;
     padding-bottom: 40px;
 }
-.noButton{
-    background-color:#E8E8A6;
-    color:#8B9A46;
+
+.noButton {
+    background-color: #E8E8A6;
+    color: #8B9A46;
     margin-left: 40%;
 }
-.yesButton{
+
+.yesButton {
     background-color: #8B9A46;
-    color:white;
+    color: white;
     margin-left: 40%;
 }
-.field.is-grouped{
+
+.field.is-grouped {
     padding-left: 100px;
     vertical-align: middle;
 }
-#buttonsOnNewEntry.field.is-grouped{
+
+#buttonsOnNewEntry.field.is-grouped {
     padding-left: 5px;
+}
+.footer{
+    z-index:15;
 }

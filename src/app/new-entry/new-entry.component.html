@@ -4,65 +4,66 @@
 <!-- * * Home Page with Nav* * -->
 
 <html>
-    <div class="textBox">
-        <h1 class="textBoxh1"> New Entry</h1>
-        <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+<div class="textBox">
+    <h1 class="textBoxh1"> New Entry</h1>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
 
-            <div class="newSubmission" class="form-group" style="padding: 30px">
-                <div class="field">
-                    <div class="form-group">
-                        <label for="date" class="label">Name</label>
-                        <input required #name="ngModel" name="name" class="form-control" ngModel
-                            class="input is-success" type="text" placeholder="First and Last" />
-                        <div class="error" *ngIf="name.touched && name.invalid">please enter your first and last
-                            name</div>
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for="date" class="label">Date</label>
-
-                        <input class="input is-success" class="form-control" name="date" required
-                            #date="ngModel" ngModel type="date" />
-                        <div class="error" *ngIf="date.touched && date.invalid">please enter today's
-                            date</div>
-                    </div>
+        <div class="newSubmission" class="form-group" style="padding: 30px">
+            <div class="field">
+                <div class="form-group">
+                    <label for="date" class="label">Name</label>
+                    <input required #name="ngModel" name="name" class="form-control" ngModel class="input is-success"
+                        type="text" placeholder="First and Last" />
+                    <div class="error" *ngIf="name.touched && name.invalid">please enter your first and last
+                        name</div>
+                </div>
 
 
-                    <div class="control has-icons-left has-icons-right" class="form-group">
-                        <label for="semester" class="label">Internship Semester</label>
-                        <input class="input is-success" ngModel name="semester" required #semester="ngModel"
-                            type="text" placeholder="Winter 2022" />
-                        <div class="error" *ngIf="semester.touched && semester.invalid">please enter
-                            thesemester of your internship</div>
-                    </div>
+                <div class="form-group">
+                    <label for="date" class="label">Date</label>
 
-                    <div class="field" class="form-group">
-                        <label for="body" class="label">Message</label>
+                    <input class="input is-success" class="form-control" name="date" required #date="ngModel" ngModel
+                        type="date" />
+                    <div class="error" *ngIf="date.touched && date.invalid">please enter today's
+                        date</div>
+                </div>
 
-                        <div class="control">
-                            <textarea name="body" ngModel required #body="ngModel" class="textarea"
-                                placeholder="What do you want to share with future AAA interns..."></textarea>
-                            <div class="error" *ngIf="body.touched && body.invalid">please enter your message
-                                before submitting
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="field is-grouped" style="padding-top: 10px;">
-                        <div class="control">
-                            <button [disabled]="!userForm.form.valid" id="submitBtn" class="button is-link"
-                                type="submit" (click)="add(userForm.value.name,userForm.value.date, userForm.value.semester, userForm.value.body)" (click)="addNewItem(userForm.value)">Submit</button>
-                        </div>
+                <div class="control has-icons-left has-icons-right" class="form-group">
+                    <label for="semester" class="label">Internship Semester</label>
+                    <input class="input is-success" ngModel name="semester" required #semester="ngModel" type="text"
+                        placeholder="Winter 2022" />
+                    <div class="error" *ngIf="semester.touched && semester.invalid">please enter
+                        thesemester of your internship</div>
+                </div>
 
-                        <div class="control">
-                            <button class="button is-link is-light" (click)="clearSuccessMsg($event)" type="reset"
-                                id="cancelBtn">Clear</button>
-                        </div>
-                        <div *ngIf="showSuccessMsg">
-                            <p>Success!</p>
+                <div class="field" class="form-group">
+                    <label for="body" class="label">Message</label>
+
+                    <div class="control">
+                        <textarea name="body" ngModel required #body="ngModel" class="textarea"
+                            placeholder="What do you want to share with future AAA interns..."></textarea>
+                        <div class="error" *ngIf="body.touched && body.invalid">please enter your message
+                            before submitting
                         </div>
                     </div>
                 </div>
+
+                <div class="field is-grouped" style="padding-top: 10px;">
+                    <div class="control">
+                        <button [disabled]="!userForm.form.valid" id="submitBtn" class="button is-link" type="submit"
+                            (click)="add(userForm.value.name,userForm.value.date, userForm.value.semester, userForm.value.body)"
+                            (click)="addNewItem(userForm.value)">Submit</button>
+                    </div>
+
+                    <div class="control">
+                        <button class="button is-link is-light" (click)="clearSuccessMsg($event)" type="reset"
+                            id="cancelBtn">Clear</button>
+                    </div>
+                    <div *ngIf="showSuccessMsg">
+                        <p>Success!</p>
+                    </div>
+                </div>
             </div>
-        </form>
+        </div>
+    </form>

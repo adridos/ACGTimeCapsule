@@ -16,10 +16,10 @@ import { CardsComponent } from './cards/cards.component';
 import { ItemOutputComponent } from './item-output/item-output.component';
 
 const Routes: Routes = [
-    { path: 'home', component: HomeComponent },
-    { path: 'about', component: AboutComponent },
-    { path: 'new-entry', component: NewEntryComponent},
-    { path: 'all-entries', component: AllEntriesComponent}
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'new-entry', component: NewEntryComponent },
+  { path: 'all-entries', component: AllEntriesComponent }
 ];
 @NgModule({
   declarations: [
@@ -41,9 +41,9 @@ const Routes: Routes = [
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule
-],
-    
-  exports:[RouterModule],
+  ],
+
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })

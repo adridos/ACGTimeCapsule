@@ -1,8 +1,3 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * Adriana Massey * * -->
-<!-- * * April 14 2022 * * -->
-<!-- * * Home Page with Nav * * -->
-
 <html>
 <!-- * * New Entry Form * * -->
 <div *ngIf="showNewEntryForm" class="textBox">
@@ -20,8 +15,8 @@
 
             <div class="form-group">
                 <label for="date" class="label">Date</label>
-                <input [(ngModel)]="dateModel" class="input is-success" class="form-control" name="date"
-                    required #date="ngModel" ngModel type="date" />
+                <input [(ngModel)]="dateModel" class="input is-success" class="form-control" name="date" required
+                    #date="ngModel" ngModel type="date" />
                 <div class="error" *ngIf="date.touched && date.invalid">please enter today's
                     date</div>
             </div>
@@ -36,11 +31,11 @@
             </div>
 
             <div class="field" class="form-group">
-                <label for="body" class="label">body</label>
+                <label for="body" class="label">Message</label>
 
                 <div class="control">
-                    <textarea [(ngModel)]="messageModel" name="body" ngModel required #body="ngModel"
-                        class="textarea" placeholder="What do you want to share with future AAA interns..."></textarea>
+                    <textarea [(ngModel)]="messageModel" name="body" ngModel required #body="ngModel" class="textarea"
+                        placeholder="What do you want to share with future AAA interns..."></textarea>
                     <div class="error" *ngIf="body.touched && body.invalid">please enter your message before
                         submitting</div>
                 </div>
@@ -53,7 +48,7 @@
                 </div>
 
                 <div class="control">
-                    <button class="button is-link is-light" (click)="clearSuccessMsg()" type="reset"
+                    <button class="button is-link is-light" type="reset"
                         id="cancelBtn">Clear</button>
                 </div>
                 <div *ngIf="showSuccessMsg">
@@ -83,11 +78,7 @@
 
 <!-- * * Display All Entries * * -->
 <div class="scrollingCards">
-    <!--*ngFor="let post of posts.reverse()"-->
-    <app-cards *ngFor="let post of posts" 
-    [body]="post.body" 
-    [name]="post.name" 
-    [semester]="post.semester"
-    [date]="post.date">
-</app-cards>
+    <app-cards *ngFor="let post of posts.reverse()" [body]="post.body" [name]="post.name" [semester]="post.semester"
+        [date]="post.date">
+    </app-cards>
     <div class="push"></div>
