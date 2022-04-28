@@ -48,24 +48,20 @@
                 </div>
 
                 <div class="control">
-                    <button class="button is-link is-light" type="reset"
-                        id="cancelBtn">Clear</button>
-                </div>
-                <div *ngIf="showSuccessMsg">
-                    <p>Success!</p>
+                    <button class="button is-link is-light" type="reset" id="cancelBtn">Clear</button>
                 </div>
             </div>
         </div>
     </form>
 </div>
 
-<!-- * * Display Re-enter form * * -->
+<!-- * * Display Re-entery form * * -->
 <div *ngIf="showReEntryForm" class="ReEntrytextBox">
     <h1 class="nextEntryHeader">Submit Another Entry?</h1>
     <div class="field is-grouped" style="padding-top: 10px;">
         <div class="control" style="align-self: center;">
             <button class="yesButton" class="button is-link" style="background-color: #8B9A46;
-            color:white;" showSuccessMessage="false" (click)="showNewEntry()">Yes</button>
+            color:white;" (click)="showNewEntry()">Yes</button>
         </div>
 
         <div class="control">

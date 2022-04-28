@@ -19,7 +19,6 @@ export class HomeComponent extends CardsComponent implements OnInit {
   });
   showNewEntryForm: boolean = true;
   showReEntryForm: boolean = false;
-  showSuccessMsg: boolean = false;
 
   nameModel: any = "";
   dateModel: any = "";
@@ -28,9 +27,8 @@ export class HomeComponent extends CardsComponent implements OnInit {
   data: string;
 
   onSubmit() {
-    this.showSuccessMsg = true;
     this.posts.push({ name: this.nameModel, date: this.dateModel, semester: this.semesterModel, body: this.messageModel });
-    this._homeService.addPost(this.nameModel, this.dateModel, this.semesterModel,this.messageModel);
+    this._homeService.addPost(this.nameModel, this.dateModel, this.semesterModel, this.messageModel);
     this.nameModel = '';
     this.dateModel = '';
     this.semesterModel = '';
@@ -44,7 +42,6 @@ export class HomeComponent extends CardsComponent implements OnInit {
   showNewEntry() {
     this.showReEntryForm = false;
     this.showNewEntryForm = true;
-    this.showSuccessMsg = false;
   }
   hideAllForms() {
     this.showNewEntryForm = false;

@@ -1,8 +1,3 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * Adriana Massey * * -->
-<!-- * * Feb 8 2022 * * -->
-<!-- * * Home Page with Nav* * -->
-
 <html>
 <div class="textBox">
     <h1 class="textBoxh1"> New Entry</h1>
@@ -24,8 +19,7 @@
 
                     <input class="input is-success" class="form-control" name="date" required #date="ngModel" ngModel
                         type="date" />
-                    <div class="error" *ngIf="date.touched && date.invalid">please enter today's
-                        date</div>
+                    <div class="error" *ngIf="date.touched && date.invalid">please enter today's date</div>
                 </div>
 
 
@@ -33,8 +27,8 @@
                     <label for="semester" class="label">Internship Semester</label>
                     <input class="input is-success" ngModel name="semester" required #semester="ngModel" type="text"
                         placeholder="Winter 2022" />
-                    <div class="error" *ngIf="semester.touched && semester.invalid">please enter
-                        thesemester of your internship</div>
+                    <div class="error" *ngIf="semester.touched && semester.invalid">please enter the semester of your
+                        internship</div>
                 </div>
 
                 <div class="field" class="form-group">
@@ -55,13 +49,8 @@
                             (click)="add(userForm.value.name,userForm.value.date, userForm.value.semester, userForm.value.body)"
                             (click)="addNewItem(userForm.value)">Submit</button>
                     </div>
-
                     <div class="control">
-                        <button class="button is-link is-light" (click)="clearSuccessMsg($event)" type="reset"
-                            id="cancelBtn">Clear</button>
-                    </div>
-                    <div *ngIf="showSuccessMsg">
-                        <p>Success!</p>
+                        <button class="button is-link is-light" type="reset" id="cancelBtn">Clear</button>
                     </div>
                 </div>
             </div>

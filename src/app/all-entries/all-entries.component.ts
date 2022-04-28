@@ -6,9 +6,7 @@ import { CardsComponent } from '../cards/cards.component';
   templateUrl: './all-entries.component.html',
   styleUrls: ['./all-entries.component.css']
 })
-export class AllEntriesComponent extends CardsComponent {
-
-}
+export class AllEntriesComponent extends CardsComponent { }
 
 
 
